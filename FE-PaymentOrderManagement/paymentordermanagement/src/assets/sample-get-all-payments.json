@@ -1,0 +1,24 @@
+{
+    "response_key": "SUCCESS",
+    "response_message": "Success",
+    "data": [
+        {
+            "id": "e056bf29-5779-4e67-ac08-d4f07f0871b4",
+            "creditor_account": "zxcxzczxcasda",
+            "debtor_account": "nfnfnzcntc",
+            "amount": 1123231,
+            "date": "21122022",
+            "currency": "TRY",
+            "is_deleted": false
+        },
+        {
+            "id": "529a71b4-abf0-4b91-a91c-5b7d3904a53b",
+            "creditor_account": "vsvsxzczxcasda",
+            "debtor_account": "zxcznfnzcntc",
+            "amount": 223231,
+            "date": "10122022",
+            "currency": "TRY",
+            "is_deleted": false
+        }
+    ]
+}

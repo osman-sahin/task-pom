@@ -1,0 +1,84 @@
+<form class="form" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="creditor_account">creditor_account</label>
+        <input type="text" class="form-control" id="creditor_account" formControlName="creditor_account">
+        <span class="help-block" *ngIf="!f['creditor_account'].valid&&f['creditor_account'].touched">
+            <span class="text-danger"
+                *ngIf="(f['creditor_account'].touched || submitted) && f['creditor_account'].errors?.['required']">
+                field is required
+            </span>
+            <span class="text-danger"
+                *ngIf="(f['creditor_account'].touched || submitted) && f['creditor_account'].errors?.['maxlength']">
+                max length exceeded (34)
+            </span>
+            <span class="text-danger"
+                *ngIf="(f['creditor_account'].touched || submitted) && f['creditor_account'].errors?.['pattern']">
+                only letters and numbers and hyphens allowed
+            </span>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="debtor_account">debtor_account</label>
+        <input type="text" class="form-control" id="debtor_account" formControlName="debtor_account">
+        <span class="help-block" *ngIf="!f['debtor_account'].valid&&f['debtor_account'].touched">
+            <span class="text-danger"
+                *ngIf="(f['debtor_account'].touched || submitted) && f['debtor_account'].errors?.['required']">
+                field is required
+            </span>
+            <span class="text-danger"
+                *ngIf="(f['debtor_account'].touched || submitted) && f['debtor_account'].errors?.['maxlength']">
+                max length exceeded (34)
+            </span>
+            <span class="text-danger"
+                *ngIf="(f['debtor_account'].touched || submitted) && f['debtor_account'].errors?.['pattern']">
+                only letters and numbers and hyphens allowed
+            </span>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="date">date(DDMMYYY)</label>
+        <input type="text" class="form-control" id="date" formControlName="date">
+        <span class="help-block" *ngIf="!f['date'].valid&&f['date'].touched">
+            <span class="text-danger" *ngIf="(f['date'].touched || submitted) && f['date'].errors?.['required']">
+                field is required
+            </span>
+            <span class="text-danger" *ngIf="(f['date'].touched || submitted) && f['date'].errors?.['pattern']">
+               pattern should be 'DDMMYYYY'
+            </span>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="currency">currency</label>
+        <input type="text" class="form-control" id="currency" formControlName="currency">
+        <span class="help-block" *ngIf="!f['currency'].valid&&f['currency'].touched">
+            <span class="text-danger" *ngIf="(f['currency'].touched || submitted) && f['currency'].errors?.['required']">
+                field is required
+            </span>
+            <span class="text-danger" *ngIf="(f['currency'].touched || submitted) && f['currency'].errors?.['minlength']">
+                min length is 3
+            </span>
+            <span class="text-danger" *ngIf="(f['currency'].touched || submitted) && f['currency'].errors?.['maxlength']">
+                max length is 3
+            </span>
+            <span class="text-danger" *ngIf="(f['currency'].touched || submitted) && f['currency'].errors?.['pattern']">
+                pattern should be 'CCC'
+             </span>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="amount">amount</label>
+        <input type="text" class="form-control" id="amount" formControlName="amount">
+        <span class="help-block" *ngIf="!f['amount'].valid&&f['amount'].touched">
+            <span class="text-danger" *ngIf="(f['amount'].touched || submitted) && f['amount'].errors?.['required']">
+                field is required
+            </span>
+            <span class="text-danger" *ngIf="(f['amount'].touched || submitted) && f['amount'].errors?.['pattern']">
+                only numeric values allowed
+             </span>
+        </span>
+    </div>
+    <div class="form-group mt-2 pull-right">
+        <button class="btn btn-warning" (click)="this.goBack()"> Go Back</button>
+        <button type="submit" class="btn btn-success" [disabled]="!updateForm.valid || submitted"> Update</button>
+      </div>
+</form>

@@ -1,0 +1,11 @@
+{
+  "name": "fe-paymentordermanagement",
+  "version": "1.0.0",
+  "description": "Im-Par Angular Assessment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Osman Sahin",
+  "license": "ISC"
+}

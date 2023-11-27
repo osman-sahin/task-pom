@@ -1,0 +1,34 @@
+<div class="table-container">
+    <table>
+        <ng-container>
+            <tr>
+                <th class="column-index"><strong>Index</strong></th>
+                <th class="column" *ngFor="let column of columns">
+                    {{ column }}
+                </th>
+                <th class="column-index"><strong>Actions </strong><button [routerLink]="['/payment/add']">Add</button></th>
+            </tr>
+            <tr class="row-container" *ngFor="let item of data; index as i;">
+                <td class="row-index">{{i + 1}}</td>
+                <td class="row" *ngFor="let col of columns">
+                    {{ item[col]}}
+                </td>
+                <td class="row">
+                <button [routerLink]="['/payment', item['id']]">Detail</button>    
+                <button (click)="this.delete(item['id'])">Delete</button>    
+                </td>
+            </tr>
+        </ng-container>
+        <!-- <div class="actions">
+            <div class="current">
+                <strong>{{pageData.start + 1}} <span>-</span> {{pageData.end}}</strong> of {{dataSize}}
+            </div>
+            <button (click)="previous()">
+                <img src="./../../assets/chevron-left-solid.png" class="icon">
+            </button>
+            <button (click)="next()">
+                <img src="./../../assets/chevron-right-solid.png" class="icon">
+            </button>
+        </div> -->
+    </table>
+</div>
